@@ -1,21 +1,19 @@
 require 'sinatra'
 
-# Block only executed when the program is loaded
-configure do
-  # Define an array of viable moves that a player (and the computer) can perform
-  set :defeat, {rock: :scissors, paper: :rock, scissors: :paper}
-  set :throws, settings.defeat.keys
-  p "settings.defeat=#{settings.defeat}"
-  p "settings.throws=#{settings.throws}"
+# This chunk of code is only executed when the program is loaded.
+# Define an array of viable moves that a player (and the computer) can perform
+set :defeat, {rock: :scissors, paper: :rock, scissors: :paper}
+set :throws, settings.defeat.keys
+p "settings.defeat=#{settings.defeat}"
+p "settings.throws=#{settings.throws}"
 
-  set :menu, <<~EOF
-    <p>
-      Throw <a href='/throw/rock'>rock</a>,
-      <a href='/throw/paper'>paper</a> or
-      <a href='/throw/scissors'>scissors</a>
-    </p>
-  EOF
-end
+set :menu, <<~EOF
+  <p>
+    Throw <a href='/throw/rock'>rock</a>,
+    <a href='/throw/paper'>paper</a> or
+    <a href='/throw/scissors'>scissors</a>
+  </p>
+EOF
 
 # Block executed before each request is processed
 before do
