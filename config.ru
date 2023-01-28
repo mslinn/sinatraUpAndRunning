@@ -1,1 +1,3 @@
-run 1-5
+require './4-1'
+
+run MyApp
