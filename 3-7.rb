@@ -4,7 +4,8 @@ require './sinatra/post_get'
 configure do
   set :menu_get, <<~EOF
     <p>
-      <a href='/?name=Mary'>name=Mary</a>,
+    <a href='/'>no name</a>,
+    <a href='/?name=Mary'>name=Mary</a>,
       <a href='/?name=George'>name=George</a>
     </p>
   EOF
@@ -18,5 +19,11 @@ configure do
 end
 
 post_get '/' do
-  "Hi #{params[:name]}<br>\n#{settings.menu_get}<br>\n#{settings.menu_post}"
+  name = params[:name]
+  greet = "<p>Hi, #{name}!</p>" unless name.to_s.empty?
+  <<~EOF
+    #{greet}
+    #{settings.menu_get}
+    #{settings.menu_post}
+  EOF
 end
