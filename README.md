@@ -37,19 +37,20 @@ $ rerun 1-5.rb
 Point your web browser to http://localhost:4567
 
 
-## Run Under Rack
+## Run As Rack App
+From the [`rackup` code](https://github.com/macournoyer/thin/blob/master/lib/thin/server.rb#L27-L28):
+> A valid Rack adapter (application) must respond to <tt>call(env#Hash)</tt> and return an array of <tt>[status, headers, body]</tt>.
+
+If `1-5.rb` was made into a Rack app, then the following would work.
+
+### Development
 ```shell
 $ rackup
 ```
 Point your web browser to http://localhost:9292
 
 
-## Run As Rack App
-From the [`rackup` code](https://github.com/macournoyer/thin/blob/master/lib/thin/server.rb#L27-L28):
-> A valid Rack adapter (application) must respond to <tt>call(env#Hash)</tt> and return an array of <tt>[status, headers, body]</tt>.
-
-If `1-5.rb` was made into a Rack app, then the following would work:
-
+### Production
 ```shell
 $ rackup --env production config.ru
 ```

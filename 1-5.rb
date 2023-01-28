@@ -17,7 +17,6 @@ before do
 end
 
 after do
-  "Emitted by after"
 end
 
 get '/' do
