@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Link Helper Demo</title>
+  </head>
+<body>
+  <h1>Link Helper Demo</h1>
+  <nav>
+    <p>Displaying <code><%= params[:splat].join(', ') %></code></p>
+    <ul>
+      <li><a href="<%= link(:index) %>">Index</a></li>
+      <li><a href="<%= link(:about) %>">About</a></li>
+      <li><a href="<%= link(:random) %>">Random</a></li>
+    </ul>
+  </nav>
+</body>
+</html>

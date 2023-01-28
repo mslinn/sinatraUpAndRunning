@@ -1,7 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    cgi (0.3.1)
     daemons (1.4.1)
+    erb (2.2.3)
+      cgi
     eventmachine (1.2.7)
     ffi (1.15.5)
     listen (3.8.0)
@@ -33,6 +36,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  erb
   rerun
   sinatra
   thin
