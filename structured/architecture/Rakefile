@@ -1,0 +1,4 @@
+desc "Run the Sinatra webapp using the default Rack server"
+task :default do
+  sh "rackup -p 4567"
+end

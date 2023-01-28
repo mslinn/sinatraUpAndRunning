@@ -1,0 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'debug', require: false
+gem 'debase', "0.2.5.beta2", require: false
+gem 'erb'
+gem 'rerun', require: false
+gem 'sinatra', require: false
+gem 'thin', require: false
+gem 'ruby-debug-ide', require: false

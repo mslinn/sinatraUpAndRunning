@@ -5,16 +5,45 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Debug 1-5",
-      "type": "Ruby",
-      "request": "launch",
-      "program": "${workspaceRoot}/1-5.rb"
+      "type": "rdbg",
+      "name": "Attach rdbg",
+      "request": "attach"
     },
     {
+      "cwd": "${workspaceRoot}/simple/",
+      "name": "Debug 1-5",
+      "program": "1-5.rb",
+      "request": "launch",
+      "type": "Ruby",
+    },
+    {
+      "cwd": "${workspaceRoot}/simple/",
       "name": "Debug 3-7",
       "type": "Ruby",
       "request": "launch",
-      "program": "${workspaceRoot}/3-7.rb"
+      "program": "3-7.rb"
+    },
+    {
+      "cwd": "${workspaceRoot}/simple/",
+      "name": "Debug 3-9",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "3-9.rb"
+    },
+    {
+      "cwd": "${workspaceRoot}/simple/",
+      "name": "Debug 4-1",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "4-1.rb"
+    },
+    {
+      "cwd": "${workspaceRoot}/structured/architecture",
+      "name": "Debug Architecture",
+      "preLaunchTask": "rake",
+      "program": "config.ru",
+      "request": "launch",
+      "type": "Ruby",
     },
   ]
 }

@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+
+gem 'erb'
+gem 'rerun', require: false
+gem 'sinatra', require: false
+gem 'thin', require: false
