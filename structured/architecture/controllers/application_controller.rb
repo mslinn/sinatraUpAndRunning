@@ -14,11 +14,15 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     title 'Default Index Page'
-    erb "<h1>Default Index</h1>\n<p>Please add a route for / to your <code>ApplicationController</code> subclsss.</p>"
+    @message = <<~EOF
+      <h1>Default Index</h1>
+      <p>Please add a route for / to your <code>ApplicationController</code> subclsss.</p>
+    EOF
+    erb :index
   end
 
   not_found do
     title 'Not Found!'
-    erb :not_found
+    erb File.directory?(".#{request.path}") ? :index : :not_found
   end
 end

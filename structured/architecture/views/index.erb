@@ -1,0 +1,19 @@
+<%= @message.to_s.strip %>
+
+<p>request.path=<%= request.path %></p>
+
+<pre><%=
+  path = request.path
+  at_top = (path == '/')
+  p "at_top=#{at_top}"
+  Dir.entries(".#{path}")
+    .filter do |e|
+      this_dir = (e == '.')
+      parent_dir = (e == '..')
+      hide_parent = parent_dir && at_top
+      show_entry = !this_dir && !hide_parent
+      e if show_entry
+    end
+    .map { |e| "<a href='#{e}'>#{e}</a>" }
+    .join("\n")
+%></pre>
