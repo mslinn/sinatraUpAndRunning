@@ -36,6 +36,10 @@ $ rerun 1-5.rb
 ```
 Point your web browser to http://localhost:4567
 
+```shell
+$ rerun 3-7.rb
+```
+
 
 ## Run As Rack App
 From the [`rackup` code](https://github.com/macournoyer/thin/blob/master/lib/thin/server.rb#L27-L28):

@@ -9,6 +9,12 @@
       "type": "Ruby",
       "request": "launch",
       "program": "${workspaceRoot}/1-5.rb"
-    }
+    },
+    {
+      "name": "Debug 3-7",
+      "type": "Ruby",
+      "request": "launch",
+      "program": "${workspaceRoot}/3-7.rb"
+    },
   ]
 }

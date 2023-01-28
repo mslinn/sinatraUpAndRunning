@@ -8,7 +8,13 @@ configure do
   p "settings.defeat=#{settings.defeat}"
   p "settings.throws=#{settings.throws}"
 
-  set :menu, "<p>Throw <a href='/throw/rock'>rock</a>, <a href='/throw/paper'>paper</a> or <a href='/throw/scissors'>scissors</a></p>"
+  set :menu, <<~EOF
+    <p>
+      Throw <a href='/throw/rock'>rock</a>,
+      <a href='/throw/paper'>paper</a> or
+      <a href='/throw/scissors'>scissors</a>
+    </p>
+  EOF
 end
 
 # Block executed before each request is processed
