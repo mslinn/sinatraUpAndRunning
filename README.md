@@ -15,15 +15,14 @@ Use [`rerun`](https://github.com/alexch/rerun) instead of
 ```shell
 $ sudo apt install rerun
 
-$ bundle install
+$ gem install rerun
 ```
 
 
 ### WSL / WSL2
 Rerun does not work without the full Linux machinery, so
-[enable `systemd`](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/).
-
-Now follow the native Ubuntu instructions above.
+[enable `systemd`](https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/)
+and follow the native Ubuntu instructions above.
 
 
 ## Simple and Structured Webapps
