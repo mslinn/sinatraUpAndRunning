@@ -19,7 +19,7 @@ module ApplicationHelper
         .map { |e| render_entry(e) }
         .join("\n")
       <<~EOF
-        <h2>Directory of #{path}</h2>
+        <h2>Directory of #{@path}</h2>
         #{listing}
       EOF
     end
@@ -27,17 +27,21 @@ module ApplicationHelper
     private
 
     def render_entry(e)
+      return '' if e == '.'
+
       fq = if @at_top
-            e
-          elsif e == '..'
-            parent = File.dirname(@path) + '/'
-            p "parent=#{parent}"
-            parent
-          else
-            "#{@path_relative}#{e}"
-          end
+             e
+           elsif e == '..'
+             if @path == '/'
+               '/'
+             else
+               File.dirname(@path)
+             end
+           else
+             "#{@path_relative}#{e}"
+           end
       p "@path=#{@path}; path_relative=#{@path_relative}; e=#{e}; fq=#{fq}"
-      File.directory?(fq) ? "<a href='#{fq}'>#{e}</a>" : e
+      e == '..' || File.directory?(fq) ? "<a href='#{fq}'>#{e}</a>" : e
     end
 
     def show_entry(e)
