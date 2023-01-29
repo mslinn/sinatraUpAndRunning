@@ -1,0 +1,11 @@
+/.bundle/
+/.yardoc
+/_yardoc/
+/coverage/
+/bin/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
+Gemfile.lock
+status_persistence.txt

@@ -37,13 +37,5 @@
       "request": "launch",
       "program": "4-1.rb"
     },
-    {
-      "cwd": "${workspaceRoot}/structured/architecture",
-      "name": "Debug Architecture",
-      "preLaunchTask": "rake",
-      "program": "config.ru",
-      "request": "launch",
-      "type": "Ruby",
-    },
   ]
 }
