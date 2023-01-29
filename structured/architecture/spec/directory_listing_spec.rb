@@ -35,7 +35,7 @@ RSpec.describe(ApplicationHelper::DirectoryListing) do
     expect(dl_top.send(:render_entry, 'public')).to eq("<a href='public'>public</a>")
   end
   it "renders a lower-level directory properly" do
-    expect(dl_public_css.send(:render_entry, '..')).to eq("<a href='..'>..</a>")
-    expect(dl_public_css.send(:render_entry, 'main.css')).to eq("<a href='main.css'>main.css</a>")
+    expect(dl_public_css.send(:render_entry, '..')).to eq("<a href='/public'>..</a>")
+    expect(dl_public_css.send(:render_entry, 'main.css')).to eq('main.css')
   end
 end
