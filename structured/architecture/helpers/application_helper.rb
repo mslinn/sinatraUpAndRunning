@@ -14,13 +14,18 @@ module ApplicationHelper
     end
 
     def render
+      index_path = "./#{@path}index.html"
+      p index_path
+      if File.exist?(index_path)
+        return File.read(index_path)
+      end
       listing = Dir.entries(@path_relative)
         .filter { |e| e if show_entry(e) }
         .map { |e| render_entry(e) }
         .join("\n")
       <<~EOF
         <h2>Directory of #{@path}</h2>
-        #{listing}
+        <pre>#{listing}</pre>
       EOF
     end
 
